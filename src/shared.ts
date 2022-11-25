@@ -1,6 +1,7 @@
 import { GrubpayInstance, GrubpayOption, GrubpayConstructor } from "../types";
 
-const V4_URL = "https://api.grubpay.io/v4/grubpay.js";
+const V4_URL = "http://iotpaycc.test/v4/grubpay.js";
+// const V4_URL = "https://api.grubpay.io/v4/grubpay.js";
 
 export type LoadGrubpay = (
   secureId: string,
@@ -21,7 +22,7 @@ export function findScript(): HTMLScriptElement | null {
 }
 
 function injectScript(): HTMLScriptElement {
-  const script = document.createElement("script");
+  const script: HTMLScriptElement = document.createElement("script");
   script.src = `${V4_URL}`;
 
   const headOrBody = document.head || document.body;
@@ -60,13 +61,7 @@ export const loadScript = (): Promise<GrubpayConstructor | null> => {
     }
 
     try {
-      let script = findScript();
-
-      if (script) {
-        // console.warn("existed script will be used");
-      } else {
-        script = injectScript();
-      }
+      let script = findScript() || injectScript();
 
       script.addEventListener("load", () => {
         if (window.Grubpay) {
