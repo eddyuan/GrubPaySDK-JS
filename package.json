@@ -1,15 +1,44 @@
 {
-  "name": "grubpay",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "@grubpay/grubpay-js",
+  "version": "0.0.1",
+  "description": "Grubpay.js loading utility",
+  "main": "dist/grubpay.js",
+  "module": "dist/grubpay.esm.js",
+  "jsnext:main": "dist/grubpay.esm.js",
+  "type": "module",
+  "types": "types/index.d.ts",
+  "typings": "types/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "typecheck": "tsc",
+    "build": "yarn clean && yarn rollup -c",
+    "clean": "rimraf dist"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "Grubpay",
+    "Grubpay.js",
+    "IOTPay"
+  ],
+  "author": "Grubpay (https://www.grubpay.io)",
+  "license": "MIT",
+  "homepage": "https://www.grubpay.io",
+  "files": [
+    "dist",
+    "src",
+    "types"
+  ],
   "devDependencies": {
-    "typescript": "^4.9.3"
+    "@babel/core": "^7.20.2",
+    "@babel/preset-env": "^7.20.2",
+    "@rollup/plugin-babel": "^6.0.2",
+    "@rollup/plugin-replace": "^5.0.1",
+    "@types/jest": "^29.2.3",
+    "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "@typescript-eslint/parser": "^5.44.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^3.4.0",
+    "rollup-plugin-typescript2": "^0.34.1",
+    "typescript": "^4.9.3",
+    "zx": "^7.1.1"
   }
 }

@@ -5,7 +5,6 @@ import {
 } from "./grubpay-js";
 
 export * from "./grubpay-js";
-export * from "./api";
 
 export const loadGrubpay: (
   secureId: string,

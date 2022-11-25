@@ -1,5 +1,5 @@
 import { LoadGrubpay, loadScript } from "./shared";
-import { GrubpayOption } from "./types";
+import { GrubpayOption } from "../types";
 
 // Execute our own script injection after a tick to give users time to do their
 // own script injection.

@@ -1,4 +1,4 @@
-import { GrubpayInstance, GrubpayOption, GrubpayConstructor } from "./types";
+import { GrubpayInstance, GrubpayOption, GrubpayConstructor } from "../types";
 
 const V4_URL = "https://api.grubpay.io/v4/grubpay.js";
 
