@@ -1,9 +1,9 @@
 # Grubpay.js ES Module
 
-Use [Grubpay.js](https://stripe.com/docs/stripe-js) as an ES module.
+Use [Grubpay.js](https://develop.grubpay.io/guide) as an ES module.
 
 **Note**: To be
-[PCI compliant](https://stripe.com/docs/security/guide#validating-pci-compliance),
+PCI compliant,
 you must load Grubpay.js directly from `https://api.grubpay.io/v4/grubpay.js`. You cannot
 include it in a bundle or host it yourself. This package wraps the global
 `Grubpay` function provided by the Grubpay.js script as an ES module.
@@ -100,7 +100,7 @@ By default, this module will insert a `<script>` tag that loads Grubpay.js from
 
 ```html
 <!-- Somewhere in your site's <head> -->
-<script src="https://js.stripe.com/v3" async></script>
+<script src="https://api.grubpay.io/v4/grubpay.js"></script>
 ```
 
 ## Grubpay.js Documentation

@@ -30,7 +30,7 @@ function injectScript(): HTMLScriptElement {
 
   if (!headOrBody) {
     throw new Error(
-      "Expected document.body not to be null. Stripe.js requires a <body> element."
+      "Expected document.body not to be null. Grubpay.js requires a <body> element."
     );
   }
 
@@ -42,7 +42,7 @@ function injectScript(): HTMLScriptElement {
 let grubpayPromise: Promise<GrubpayConstructor | null> | null = null;
 
 export const loadScript = (): Promise<GrubpayConstructor | null> => {
-  // Ensure that we only attempt to load Stripe.js at most once
+  // Ensure that we only attempt to load Grubpay.js at most once
   if (grubpayPromise !== null) {
     return grubpayPromise;
   }
