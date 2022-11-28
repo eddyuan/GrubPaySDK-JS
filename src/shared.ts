@@ -1,6 +1,6 @@
 import { GrubpayInstance, GrubpayOption, GrubpayConstructor } from "../types";
 
-// const V4_URL = "https://test.grubpay.io/v4/grubpay.js";
+// const V4_URL_TEST = "https://test.grubpay.io/v4/grubpay.js";
 // const V4_URL = "http://iotpaycc.test/v4/grubpay.js";
 const V4_URL = "https://api.grubpay.io/v4/grubpay.js";
 
