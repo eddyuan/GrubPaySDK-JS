@@ -1,6 +1,6 @@
 {
   "name": "@grubpay/grubpay-js",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "Grubpay.js loading utility",
   "main": "dist/grubpay.js",
   "module": "dist/grubpay.esm.js",

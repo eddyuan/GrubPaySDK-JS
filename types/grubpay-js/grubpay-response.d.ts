@@ -1,4 +1,7 @@
-import { GrubpayResponseData } from './grubpay-response-data';
+import {
+  GrubpayTokenizeResponseData,
+  GrubpayPurchaseResponseData,
+} from './grubpay-response-data';
 
 export interface GrubpayResponse {
   // If the result is success
@@ -8,7 +11,7 @@ export interface GrubpayResponse {
   message?: string | null;
 
   // The is quavalent to retData from our API
-  data?: GrubpayResponseData | null;
+  data?: GrubpayTokenizeResponseData | GrubpayPurchaseResponseData | null;
 
   // SecuredId expired or invalid or paid, a new one need to be generated
   invalidSecureId?: boolean | null;

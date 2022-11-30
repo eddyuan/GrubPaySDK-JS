@@ -36,45 +36,49 @@ necessary, it will load Grubpay.js for you by inserting the Grubpay.js script ta
 If you call `loadGrubpay` in a server environment it will resolve to `null`.
 
 ```js
-import { loadGrubpay } from "@grubpay/grubpay-js";
+import { loadGrubpay } from '@grubpay/grubpay-js';
 
 const options = {
   // Only available in pay mode
   // Default is true, when showing, customer can decide if he/she wants
   // to save the card, and if decided to save, card's token will be returned
   // to the merchant upon submitPayment()
-  // If this is set to true, merchant's params on submitPayment({saveCard:true})
-  // will be ignored
   showSaveCardCheckBox: false,
   defaultCheckBoxValue: false, // This option is only available in pay mode
   checkboxToggleStyle: true, // true, false Checkbox or Switch/Toggle style?
   // these are all the appearance options
   // For simple usage, you can just specify a theme and colorPrimary
   appearance: {
-    theme: "default", // 'default','simple','minimal'
+    theme: 'default', // 'default','simple','minimal'
     dense: false, // true, false
     dark: false, // true, false
     variables: {
-      colorPrimary: "rgb(43, 196, 107)",
+      colorPrimary: 'rgb(43, 196, 107)',
     },
   },
 };
 
-const grubpayElement = await loadGrubpay("yourSecureId", options);
+const grubpayElement = await loadGrubpay('yourSecureId', options);
 ```
 
 ### Mount in html
 
 ```js
 // Mount grubpay form on html container with querySelector eg: #grubpay-container
-grubpayElement.mount("#grubpay-container");
+let mounted = await grubpayElement.mount('#grubpay-container');
 ```
 
 ### Submit payment when user clicked your submit button
 
 ```js
 // Mount grubpay form on html container with querySelector eg: #grubpay-container
-let res = await grubpayElement.submitPayment();
+// If [forceSaveCard] is set to true, the card will be save regardless of user's choice on the checkbox
+let res = await grubpayElement.submitPayment({ forceSaveCard: false });
+if (res.success) {
+  // Do success logic
+} else {
+  // Do fail or pending logic accordingly. Refer to [https://develop.grubpay.io] for detail
+}
 ```
 
 For more information on how to use Grubpay.js, please refer to the
